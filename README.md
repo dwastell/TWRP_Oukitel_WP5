@@ -16,4 +16,6 @@ https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni/tree/twrp-9
 5) Copy the file docker.sh to the root your build platform, /twrp9.0. Run the script: . docker.sh 
 6) If successful, recovery.img will be found in /out/target/product/wp5. Flash this with fastboot, having ensured you have a copy of the stock recovery.img in case of disaster!
 
+NB. Users will note that the /data partition is not available. This is deliberate - the ability of current versions of TWRP to decrypt are limited, and I've not found a way to decrypt for this device. The partition thus mounts with 0MB! The various workarounds that have been suggested involve reformatting, which effectively wipes the partition. Hence, I thought it safer to exclude the partition. There are many other ways of backing up apps and data. For more information, see: https://twrp.me/faq/encryptionsupport.html
+
 MAGISK INTALLATION: I have experienced various problems flashing some versions of Magisk, leading to boot-loops. The (recent) version in /MISC works for me, so I have included it here. Also beware of updates with Magisk Manager - these can sometimes also lead to boot-loops and possible corruption of the recovery partition. Best to back up the your current boot.img with TWRP before flashing.
