@@ -16,4 +16,4 @@ https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni/tree/twrp-9
 5) Copy the file docker.sh to the root your build platform, /twrp9.0. Run the script: . docker.sh 
 6) If successful, recovery.img will be found in /out/target/product/wp5. Flash this with fastboot, having ensured you have a copy of the stock recovery.img in case of disaster!
 
-MAGISK INTALLATION: I have experienced various problems flashing some versions of Magisk, leading to boot-loops. The version in /MISC works for me, so I have included it here. Also beware of updates with Magisk Manager - these can sometimes also lead to boot-loops and possible corruption of the recovery partition. Best to back up the your current boot.img with TWRP before flashing.
+MAGISK INTALLATION: I have experienced various problems flashing some versions of Magisk, leading to boot-loops. The (recent) version in /MISC works for me, so I have included it here. Also beware of updates with Magisk Manager - these can sometimes also lead to boot-loops and possible corruption of the recovery partition. Best to back up the your current boot.img with TWRP before flashing.
