@@ -4,7 +4,7 @@ https://gist.github.com/rokibhasansagar/15c8e728d94a6bd35a687aac73ef79a5
 
 Rokib provided vital assitance along the way, including crucial patches to roomservice.py which are required so that TWRP can be built with omniROM for unofficial devices. The build was also performed using Rokib's droid-builder docker container.
 
-I also acklowedge who's WP1 tree provided a useful template:
+I also acklowedge chankruze who's WP1 tree provided a useful template:
 
 https://github.com/TeamWin/android_device_oukitel_wp1
 
