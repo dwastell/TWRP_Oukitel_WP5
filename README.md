@@ -7,7 +7,7 @@ I also acknowledge chankruze whose WP1 tree provided a useful template for my tr
 
 The youtube videos of AlaskaLinuxUser were also very helpful: https://www.youtube.com/channel/UCnGqG_jyyXmTzdamBpKfeHA
 
-BUILD DETAILS: A ready-built twrp image may be found in /MISC (Note this is for a 4 GB WP5). 
+BUILD DETAILS: A ready-built twrp image may be found in /MISC (this is for a 4 GB WP5). NB. The /data partition is not available - see below 
 1) Obvious prerequisites: install docker and set up the build environment for AOSP: https://source.android.com/setup/build/initializing
 2) Create the directory twrp9.0 (or a name of your choice) and install the TWRP build platform for Android Pie (9.0) there. 
 https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni/tree/twrp-9.0
