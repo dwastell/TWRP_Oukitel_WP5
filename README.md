@@ -11,7 +11,7 @@ BUILD DETAILS: A ready-built twrp image may be found in /MISC (Note this is for 
 1) Obvious prerequisites: install docker and set up the build environment for AOSP: https://source.android.com/setup/build/initializing
 2) Create the directory twrp9.0 (or a name of your choice) and install the TWRP build platform for Android Pie (9.0) there. 
 https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni/tree/twrp-9.0
-3) Create the directory /oukitel/wp5 inside /device and clone the repository: git clone https://github.com/dwastell/TWRP_oukitel_WP5.git device/oukitel/wp5
+3) Create the directory /oukitel/wp5 inside /device and download/copy or clone this repository there.
 4) The directory MISC is not part of the tree. It contains the patched roomservice.py, which should be copied to /vendor/omni/build/tools replacing the existing file.
 5) Copy the file docker.sh to the root your build platform, /twrp9.0. Run the script: . docker.sh 
 6) If successful, recovery.img will be found in /out/target/product/wp5. Flash this with fastboot, having ensured you have a copy of the stock recovery.img in case of disaster!
