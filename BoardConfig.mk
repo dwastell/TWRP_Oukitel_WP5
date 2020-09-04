@@ -18,23 +18,25 @@ TARGET_CPU_ABI_LIST := $(TARGET_CPU_ABI_LIST_64_BIT),$(TARGET_CPU_ABI_LIST_32_BI
 TARGET_BOARD_PLATFORM := mt6761               # From build.prop in /vendor (not /system)
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := d937           # as above
-TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
-TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true             
 
-# These two are for MTK Chipsets only
+# MTK Chipsets only
 BOARD_USES_MTK_HARDWARE := true
 BOARD_HAS_MTK_HARDWARE := true
 
 # Kernel
-TARGET_IS_64_BIT := true                      # true/false: Determine if the device is 64-bit or not
+TARGET_IS_64_BIT := true
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
 TARGET_PREBUILT_RECOVERY_KERNEL := $(LOCAL_PATH)/prebuilt/zImage
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive  # bootopt=64S3,32N2,64N2 buildvariant=user
-BOARD_KERNEL_BASE := 0x40078000                                                # Same 
-BOARD_KERNEL_PAGESIZE := 2048                                                  # Same
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive  # buildvariant=user
+BOARD_KERNEL_BASE := 0x40078000                                                
+BOARD_KERNEL_PAGESIZE := 2048                                                  
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x11a88000 --tags_offset 0x07808000   # --ramdisk_offset 0x03f88000 --tags_offset 0x0df88000
 
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
+TARGET_RECOVERY_INITRC := $(LOCAL_PATH)/recovery/root/init.recovery.mt6761.rc
+
 
 # Workaround for error copying vendor files to recovery ramdisk
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -54,6 +56,7 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 0x20000000
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 0x20000 
 
+#More Board settings
 BOARD_HAS_NO_REAL_SDCARD := true
 BOARD_USES_MMCUTILS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
@@ -89,7 +92,7 @@ TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_INCLUDE_CRYPTO := true
 TW_CRYPTO_FS_TYPE := "ext4"
-TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/bootdevice/by-name/userdata"
+TW_CRYPTO_REAL_BLKDEV := "/dev/block/by-name/userdata"
 TW_CRYPTO_MNT_POINT := "/data"
 TW_CRYPTO_FS_OPTIONS := "nosuid,nodev,noatime,discard,noauto_da_alloc,formattable,data=ordered"
 TW_USE_TOOLBOX := true
@@ -98,14 +101,17 @@ TW_DEFAULT_LANGUAGE := en
 TW_NO_SCREEN_BLANK := true
 TW_NO_BATT_PERCENT := false
 TW_EXCLUDE_SUPERSU := true
-TW_INCLUDE_NTFS_3G := true                    # Include NTFS Filesystem Support
-TW_INCLUDE_FUSE_EXFAT := true                 # Include Fuse-ExFAT Filesystem Support
+TW_INCLUDE_NTFS_3G := true     
+TW_INCLUDE_FUSE_EXFAT := true
 TW_NO_SCREEN_TIMEOUT := true
-
-# TWRP_INCLUDE_LOGCAT := true                   # BUILD FAILS!
-# TW_INCLUDE_FB2PNG := true                     # Include Screenshot Support 
-# TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-# TW_SECONDARY_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness   # OK
-# TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun/file          (/f_mass_storage/lun/file not found)
-# TW_DEFAULT_BRIGHTNESS := 80                   # BUILD FAILS
+TWRP_INCLUDE_LOGCAT := true
+TW_INCLUDE_FB2PNG := true                     # Include Screenshot Support 
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+TW_SECONDARY_BRIGHTNESS_PATH := /sys/devices/platform/leds-mt65xx/leds/lcd-backlight/brightness
+TW_DEFAULT_BRIGHTNESS := 80
+#
+#
+#The End!
+#
+#
 
