@@ -14,7 +14,7 @@ https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni/tree/twrp-9
 3) Create the directory /oukitel/wp5 inside /device and download/copy or clone this repository there.
 4) The directory MISC is not part of the tree. It contains the patched roomservice.py, which should be copied to /vendor/omni/build/tools replacing the existing file.
 5) Copy the file docker.sh to the root your build platform, /twrp9.0. Run the script: . docker.sh 
-6) If successful, recovery.img will be found in /out/target/product/wp5. Flash this with fastboot, having ensured you have a copy of the stock recovery.img in case of disaster!
+6) If successful, recovery.img will be found in /out/target/product/wp5. Flash this with fastboot, having ensured you have a copy of the stock recovery.img in case of disaster! NB. Android verified boot must also be disabled by flashing an empty image (patched_vbmeta.img); a copy of this is also in /MISC 
 
 NB. Users will note that the /data partition is not available. This is deliberate - the ability of current versions of TWRP to decrypt is limited, and I've not found a way to decrypt for this device. The partition thus mounts with 0MB! The various workarounds that have been suggested involve reformatting, which effectively wipes the partition. Hence, I thought it safer to exclude the partition. There are many other ways of backing up apps and data, and flash zips can be loaded from either the sdcard or USB storage. For more information, see: https://twrp.me/faq/encryptionsupport.html
 
